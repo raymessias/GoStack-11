@@ -1,3 +1,8 @@
+/**
+ * Rotas - Responsábilidade: Receber a requisição,
+ * chamar outro arquivo, devolver uma resposta.
+ */
+
 import { Router } from 'express'
 import { getCustomRepository } from 'typeorm'
 import { parseISO } from 'date-fns'

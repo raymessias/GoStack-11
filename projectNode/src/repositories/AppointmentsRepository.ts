@@ -1,3 +1,7 @@
+/**
+ * Repository - Responsável por fazer as operações dos dados da aplicação
+ */
+
 import { EntityRepository, Repository } from 'typeorm'
 
 import Appointment from '../models/Appointment'

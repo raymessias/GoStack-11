@@ -1,3 +1,7 @@
+/**
+ * Model - Responsável pelo o formato dos dados
+ */
+
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity('appointments')

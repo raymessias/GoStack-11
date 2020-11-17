@@ -1,16 +1,21 @@
+/**
+ * Services - Responsável pela regra de negócio (lógica)
+ * 1 funcionalidade por arquivo, aqui só se cria um appointment
+ */
+
 import { startOfHour } from 'date-fns'
 import { getCustomRepository } from 'typeorm'
 
 import Appointment from '../models/Appointment'
 import AppointmentsRepository from '../repositories/AppointmentsRepository'
 
-interface Request {
+interface RequestDTO {
   date: Date
   provider: string
 }
 
 class CreateAppointmentService {
-  public async execute({ date, provider }: Request): Promise<Appointment> {
+  public async execute({ date, provider }: RequestDTO): Promise<Appointment> {
     const appointmentsRepository = getCustomRepository(AppointmentsRepository)
 
     const appointmentDate = startOfHour(date)

@@ -19,7 +19,6 @@
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": "error",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -29,7 +28,8 @@
     ],
     "semi": "off",
     "no-console": "off",
-    "class-methods-use-this":"off"
+    "prettier/prettier": "error",
+    "class-methods-use-this": "off"
   },
   "settings": {
     "import/resolver": {
