@@ -1,6 +1,6 @@
 /**
  * Services - Responsável pela regra de negócio (lógica)
- * 1 funcionalidade por arquivo, aqui só se cria um appointment
+ * Uma funcionalidade por arquivo, nesse só se cria um appointment
  */
 
 import { startOfHour } from 'date-fns'
