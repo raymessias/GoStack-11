@@ -1,5 +1,7 @@
 /**
- * Repository - Responsável por fazer as operações dos dados da aplicação
+ * Repository - Responsável por fazer as operações dos dados da aplicação,
+ * se for usar métodos nativos como (create, delete, update), já se usa dentro do services
+ * caso o método seja peculiar, no caso, essa busca no banco não existe nativamente.
  */
 
 import { EntityRepository, Repository } from 'typeorm'
