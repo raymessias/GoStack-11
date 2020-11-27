@@ -1,9 +1,9 @@
 import React, { useCallback, useRef } from 'react'
 import { FiArrowLeft, FiMail, FiUser, FiLock } from 'react-icons/fi'
-// Unform previne que nputs sejam renderizados desnecessariamente
-import { Form } from '@unform/web'
+import { Form } from '@unform/web' // Unform previne render desnecessário
 import { FormHandles } from '@unform/core'
 import * as Yup from 'yup'
+
 import getValidationErrors from '../../utils/getValidationErrors'
 
 import logoImg from '../../assets/logo.svg'
