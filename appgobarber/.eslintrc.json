@@ -42,7 +42,8 @@
       "error",
       {
         "ts": "always",
-        "tsx": "always"
+        "tsx": "always",
+        "routes": "always"
       }
     ]
   }
