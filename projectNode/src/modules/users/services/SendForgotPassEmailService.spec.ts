@@ -3,20 +3,20 @@ import AppError from '@shared/errors/AppError'
 import FakeMailProvider from '@shared/container/providers/MailProvider/fakes/FakeMailProvider'
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository'
 import FakeUserTokensRepository from '../repositories/fakes/FakeUserTokensRepository'
-import SendForgotPassEmailService from './SendForgotPassEmailService'
+import SendForgotPasswordEmailService from './SendForgotPasswordEmailService'
 
 let fakeUsersRepository: FakeUsersRepository
 let fakeUserTokensRepository: FakeUserTokensRepository
 let fakeMailProvider: FakeMailProvider
-let sendForgotPassEmail: SendForgotPassEmailService
+let sendForgotPasswordEmail: SendForgotPasswordEmailService
 
-describe('SendForgotPassEmail', () => {
+describe('SendForgotPasswordEmail', () => {
   beforeEach(() => {
     fakeUsersRepository = new FakeUsersRepository()
     fakeMailProvider = new FakeMailProvider()
     fakeUserTokensRepository = new FakeUserTokensRepository()
 
-    sendForgotPassEmail = new SendForgotPassEmailService(
+    sendForgotPasswordEmail = new SendForgotPasswordEmailService(
       fakeUsersRepository,
       fakeMailProvider,
       fakeUserTokensRepository,
@@ -32,7 +32,7 @@ describe('SendForgotPassEmail', () => {
       password: '123456',
     })
 
-    await sendForgotPassEmail.execute({
+    await sendForgotPasswordEmail.execute({
       email: 'jonh@example.com',
     })
 
@@ -41,7 +41,7 @@ describe('SendForgotPassEmail', () => {
 
   it('should not be able to recover a non-existing user password', async () => {
     await expect(
-      sendForgotPassEmail.execute({
+      sendForgotPasswordEmail.execute({
         email: 'jonh@example.com',
       }),
     ).rejects.toBeInstanceOf(AppError)
@@ -56,7 +56,7 @@ describe('SendForgotPassEmail', () => {
       password: '123456',
     })
 
-    await sendForgotPassEmail.execute({
+    await sendForgotPasswordEmail.execute({
       email: 'jonh@example.com',
     })
 

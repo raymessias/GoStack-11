@@ -12,7 +12,7 @@ interface IRequest {
 }
 
 @injectable()
-class ResetPassService {
+class ResetPasswordService {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
@@ -48,4 +48,4 @@ class ResetPassService {
   }
 }
 
-export default ResetPassService
+export default ResetPasswordService
