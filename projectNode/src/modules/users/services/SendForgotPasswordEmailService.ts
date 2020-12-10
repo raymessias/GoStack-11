@@ -31,9 +31,12 @@ class SendForgotPassEmailService {
       throw new AppError('User does not exists.')
     }
 
-    await this.userTokensRepository.generate(user.id)
+    const { token } = await this.userTokensRepository.generate(user.id)
 
-    this.mailProvider.sendMail(email, 'pedido de recuperação recebido')
+    await this.mailProvider.sendMail(
+      email,
+      `pedido de recuperação recebido: ${token}`,
+    )
   }
 }
 
