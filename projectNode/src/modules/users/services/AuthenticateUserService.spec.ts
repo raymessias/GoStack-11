@@ -1,4 +1,6 @@
+import 'dotenv/config'
 import AppError from '@shared/errors/AppError'
+
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository'
 import FakeHashProvider from '../providers/hashProvider/fakes/FakeHashProvider'
 import AuthenticateUserService from './AuthenticateUserService'
@@ -9,7 +11,7 @@ let fakeHashProvider: FakeHashProvider
 let CreateUser: CreateUserService
 let authenticateUser: AuthenticateUserService
 
-describe('CreateUser', () => {
+describe('AuthenticateUserService', () => {
   beforeEach(() => {
     fakeUsersRepository = new FakeUsersRepository()
     fakeHashProvider = new FakeHashProvider()
