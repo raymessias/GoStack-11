@@ -28,8 +28,6 @@ class ListProvidersService {
         except_user_id: user_id,
       })
 
-      console.log('buscando users do banco')
-
       await this.cacheProvider.save<User[]>(`providers-list:${user_id}`, users)
     }
 
